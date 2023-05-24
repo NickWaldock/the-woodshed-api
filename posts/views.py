@@ -8,7 +8,7 @@ from .serializers import PostSerializer
 
 class PostList(APIView):
     def get(self, request):
-        post = Post.objects.all()
+        posts = Post.objects.all()
         serializer = PostSerializer(
             posts, many=True, context={'request': request}
         )

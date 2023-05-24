@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 
 
-class Post(models.model):
+class Post(models.Model):
     """
     Post model related to the user (owner) instance
     """
-    owner = models.ForeignKey(User, on_delete=CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
