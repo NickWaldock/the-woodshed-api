@@ -17,9 +17,10 @@ class Post(models.model):
     file = models.FileField(
         upload_to='../woodshed_media/pdfs/',
         blank=True,
-        default='../woodshed_media/pdf-default_kpbimk.png'
+        default='../woodshed_media/pdf-default_kpbimk.png',
+        validators=[FileExtensionValidator(allowed_extensions=['pdf'])]
     )
-    
+
     class Meta:
         ordering = ['-created_at']
 
