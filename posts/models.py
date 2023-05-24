@@ -16,7 +16,7 @@ class Post(models.Model):
     instrument = models.CharField(max_length=255)
     tags = models.CharField(max_length=255)
     file = models.FileField(
-        upload_to='../woodshed_media/pdfs/',
+        upload_to='woodshed_media/pdfs/',
         blank=True,
         default='../woodshed_media/pdf-default_kpbimk.png',
         validators=[FileExtensionValidator(allowed_extensions=['pdf'])]
