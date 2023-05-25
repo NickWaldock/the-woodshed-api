@@ -3,8 +3,8 @@ from .models import Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    owner = serializer.ReadOnlyField(source='owner.username')
-    is_owner = serializer.SerializerMethodField()
+    owner = serializers.ReadOnlyField(source='owner.username')
+    is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
@@ -13,7 +13,7 @@ class CommentSerializer(serializers.ModelSerializer):
         return request.user == obj.is_owner
     
     class Meta:
-        model = Comments
+        model = Comment
         fields = '__all__'
 
     
