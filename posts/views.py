@@ -22,6 +22,10 @@ class PostList(generics.ListCreateAPIView):
         'comments_count',
         'likes__created_at',
     ]
+    search_fields = [
+        'owner__username',
+        'title',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
