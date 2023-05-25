@@ -3,6 +3,10 @@ from .models import Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Comment model
+    Adds three extra fields when returning a list of comment instances
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -10,7 +14,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     def get_is_owner(self, obj):
         request = self.context['request']
-        return request.user == obj.is_owner
+        return request.user == obj.owner
     
     class Meta:
         model = Comment
