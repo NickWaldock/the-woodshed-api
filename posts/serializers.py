@@ -12,8 +12,8 @@ class PostSerializer(serializers.ModelSerializer):
     likes_count = serializers.ReadOnlyField()
     comments_count = serializers.ReadOnlyField()
 
-    def validate_file(self, value):
-        if value.size > 1024 * 1024 * 10:  # 10mb file size limit
+    def validate_file(self, value):  # 10mb file size limit for PDF uploads
+        if value.size > 1024 * 1024 * 10:
             raise serializers.ValidationError(
                 'File size exceeds 10mb limit!'
             )

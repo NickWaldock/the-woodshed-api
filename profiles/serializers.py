@@ -11,6 +11,14 @@ class ProfileSerializer(serializers.ModelSerializer):
     followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
 
+    def validate_image(self, value):
+        """
+        Validate profile image uploads on size
+        """
+        if value.size > 1024 * 1024 * 2:
+            raise serializers.ValidationError('Image size excees 2Mb max!')
+        return value
+
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
