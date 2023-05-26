@@ -14,7 +14,8 @@ class Profile(models.Model):
     location = models.CharField(max_length=80)
     email = models.EmailField(max_length=255, blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../woodshed_media/profile-default_iqrrx0.png'
+        upload_to='images/',
+        default='../woodshed_media/profile-default_iqrrx0.png'
     )
 
     class Meta:
