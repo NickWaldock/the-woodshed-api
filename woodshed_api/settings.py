@@ -155,8 +155,6 @@ else:
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 
-# For debugging heroku, remove after fix
-DEBUG = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
