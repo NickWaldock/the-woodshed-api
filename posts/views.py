@@ -35,6 +35,10 @@ class PostList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
+        'subtitle',
+        'instrument',
+        'tags',
+
     ]
 
     def perform_create(self, serializer):
