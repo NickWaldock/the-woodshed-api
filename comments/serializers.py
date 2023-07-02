@@ -21,15 +21,15 @@ class CommentSerializer(serializers.ModelSerializer):
 
     def get_created_at(self, obj):
         return naturaltime(obj.created_at)
-        
+
     def get_updated_at(self, obj):
         return naturaltime(obj.updated_at)
-    
+
     class Meta:
         model = Comment
         fields = '__all__'
 
-    
+
 class CommentDetailSerializer(CommentSerializer):
     """
     Serializer for the Comment model used in Detail view
