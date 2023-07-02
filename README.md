@@ -11,8 +11,3 @@ The documentation for the API side of this project can be found here in the fron
 <hr>
 <image src="readme-files/amiresponsive.png">
 <hr><br/><br/>
-
-References
-
-Using validators for file type (pdf)
-https://stackoverflow.com/questions/69054680/safe-way-to-validate-file-extension-in-serializer-django
