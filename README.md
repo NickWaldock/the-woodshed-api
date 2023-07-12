@@ -16,10 +16,11 @@ The documentation for the REACT front-end side of this project can be found here
 
 1. [Introduction](#introduction)
 2. [Project Development](#project-development)
-    - 2.1 [Milestones](#project-development-milestones)
-    - 2.2 [User Stories](#user-stories)
-    - 2.3 [Repositories & Project Boards](#repos--project-links)
-    - 2.4 [Aims](#aims)
+    - 2.1 [Repositories & Project Boards](#repos--project-links)
+    - 2.2 [Aims](#aims)
+    - 2.3 [Milestones](#milestones)
+    - 2.4 [User Stories](#user-stories)
+    
 <br><br>
 
 3. [Database](#database)
@@ -93,7 +94,7 @@ The Woodshed has been created as the 5th portfolio project for the [Code Institu
 <br /><br /><hr /><br>
 
 
-## Project Development Milestones
+## Milestones
 The [Milestones](https://github.com/NickWaldock/the-woodshed-api/milestones) for the back-end development were managed seperately but were similar in scope to the front-end.
 - <strong>Authentication & Profiles</strong>
 - <strong>CRUD Functionality</strong>
@@ -109,7 +110,7 @@ The [Milestones](https://github.com/NickWaldock/the-woodshed-api/milestones) for
 
 
 
-## Database
+# Database
 [Django REST Framework](https://www.django-rest-framework.org/) was utilised for building this custom API
 <br>
 [ElephantSQL](https://www.elephantsql.com/) was used to host and manage the PostgreSQL database. The database works in tandem with a [REACT front-end application](https://github.com/NickWaldock/the-woodshed) to manage and store data delivered via the API
@@ -153,14 +154,14 @@ A [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication 
 For steps on using Cloudinary for your version of this project click [here](#deployment)
 <br><br>
 
-## Models
+# Models
 In order to fulfil the requirements of the project, database [models](https://docs.djangoproject.com/en/4.2/topics/db/models/) would be required to store data. The following are the models created and used by the API to allow the users to interact with and manipulate data on the site.<br><br>
 
-### <ins>***User Model***
+## <ins>***User Model***
 [Django Auth](https://docs.djangoproject.com/en/4.2/topics/auth/) is a built in Django library that automatically manages all user creation, authorisation and authentication. This was utilised to handle the heavy lifting of user management. Features include password checking, permissions, and user management through the admin panel.<br><br>
 
 
-### <ins>***Profile Model***
+## <ins>***Profile Model***
 <image src="readme-files/models/profile-model.png" width=70%><br>
 
 - The Profile model relates to the <a href="#user">User</a> django auth package via the <strong><em>`owner`</em></strong> model attribute in a one-to-one relationship. Meaning a user can only have a single profile linked to its instance within the application<br><br>
@@ -184,7 +185,7 @@ In order to fulfil the requirements of the project, database [models](https://do
 ([Image Field](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#imagefield)) This allows the user to upload a profile image which becomes the user's '[Avatar](#)' in the front-end. Images are stored on the cloud file storage service [Cloudinary](https://cloudinary.com). When a user first creates an account they are designated a temporary profile image until they upload their own. Django's image form field uses [Pillow](https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html), a [file extension validator](https://docs.djangoproject.com/en/4.2/ref/validators/#django.core.validators.FileExtensionValidator) to determine valid image files
 <br><br>
 
-### <ins>***Post Model***
+## <ins>***Post Model***
 <image src="readme-files/models/post-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong>
@@ -224,7 +225,7 @@ class Meta:
 ```
 <br>
 
-### <ins>***Comment Model***
+## <ins>***Comment Model***
 <image src="readme-files/models/comment-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong> 
@@ -249,7 +250,7 @@ class Meta:
 ```
 <br><br>
 
-### <ins>***Like Model***
+## <ins>***Like Model***
 <image src="readme-files/models/like-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong> 
@@ -273,9 +274,6 @@ class Meta:
 - <strong><em>'created_at'</em></strong> 
 ([Date Time Field](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#datetimefield)) provides a current time stamp when the relationship was established. <br><em>*Note: This field does not require an `updated_at` model attribute. This is because a 'like' instance will either exist or not. If a user is to 'unlike' a post, the 'like' instance is removed completely and not updated. A repeated 'like' action will create a new 'like' instance</em>
 <br><br><hr>
-
-
-
 
 
 # Testing
