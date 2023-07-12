@@ -2,16 +2,59 @@
 
 Welcome to the readme for <em><strong>['The Woodshed'](https://the-woodshed.herokuapp.com/)</strong></em> project. This repo is the back-end custom API for the REACT front-end.
 
-
-The documentation for the API side of this project can be found here in the front-end repo:<br/>
-<em><strong>[REACT Front-end repository and readme](https://github.com/NickWaldock/the-woodshed)</strong></em>
-
-[Click here to view the live site](https://the-woodshed.herokuapp.com/)
-
 <hr>
 <image src="readme-files/amiresponsive.png">
-<hr><br/><br/>
+<hr><br/>
 
+The documentation for the REACT front-end side of this project can be found here:<br/>
+<em><strong>--> [REACT Front-end repository and readme](https://github.com/NickWaldock/the-woodshed)</strong></em>
+
+[Click here to view the live site](https://the-woodshed.herokuapp.com/)
+<hr><br>
+
+# Table of Contents
+
+1. [Introduction](#introduction)
+2. [Project Development](#project-development)
+    - 2.1 [Milestones](#project-development-milestones)
+    - 2.2 [User Stories](#user-stories)
+    - 2.3 [Repositories & Project Boards](#repos--project-links)
+    - 2.4 [Aims](#aims)
+<br><br>
+
+3. [Database](#database)
+    - 3.1 [Database Schema](#database-schema)
+    - 3.2 [CRUD Functionality](#crud-functionality)
+    - 3.3 [Technologies](#technologies)
+<br><br>
+
+4. [Models](#models)
+    - 4.1 [User Model](#user-model)
+    - 4.2 [Profile Model](#profile-model)
+    - 4.3 [Post Model](#post-model)
+    - 4.4 [Comment Model](#comment-model)
+    - 4.5 [Like Model](#like-model)
+    - 4.6 [Follower Model](#follower-model)
+<br><br>
+
+5. [Testing](#testing)
+    - 5.1 [Pep8 Validation](#pep8-validation)
+    - 5.2 [Manual Testing](#manual-testing)
+<br><br>
+
+6. [Deployment](#deployment)
+    - 6.1 [Cloudinary](#cloudinary-1)
+    - 6.2 [PostgreSQL](#postgresql)
+    - 6.3 [Heroku](#heroku)
+    - 6.4 [Forking](#forking)
+    - 6.5 [Cloning](#cloning)
+<br><br>
+
+7. [References & Acknowledgements](#references--acknowledgements)
+    - 7.1 [References](#references)
+    - 7.2 [Acknowledgements](#acknowledgements)
+
+<hr><br>
 
 # Introduction
 
@@ -26,11 +69,6 @@ This site allows users to create an account, profile, and share PDF files as wel
 
 The Woodshed has been created as the 5th portfolio project for the [Code Institue](https://codeinstitute.net) Full Stack Software Development Diploma and has no intended commerical purpose.
 
-Built using: [React](https://react.dev/), [Django Rest Framework](https://www.django-rest-framework.org/), [React Bootstrap](https://react-bootstrap.netlify.app/), [CSS](https://www.w3.org/Style/CSS/Overview.en.html#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is,CSS%20and%20on%20available%20software.), and [HTML(JSX)](https://www.w3schools.com/react/react_jsx.asp), as well as [Cloudinary](https://cloudinary.com/) for image and file storage, [ElephantSQL](https://www.elephantsql.com/) for database management, and [Heroku](https://www.heroku.com/) for deployment hosting.
-
-
-
-
 # Project Development
 
 ## Repos & Project Links
@@ -42,34 +80,88 @@ Built using: [React](https://react.dev/), [Django Rest Framework](https://www.dj
 <br><br><hr>
 
 ## Aims
-- Design and create a multi-user interactive front-end web application using HTML, CSS, and JavaScript based on component composition<br><br>
-- Create a interactive front-end application that consumes custom API data and has CRUD functionality<br><br>
-- Create a back-end API to allow users to store and manipulate data records<br><br>
-- Demonstrate the key role that specialist front-end developers perform in modern software development teams<br><br>
-- Maintain a consistient and simple user interface design aesthetic<br><br>
-- Create an application designed for musicians and music teachers to act as a platorm for sharing musically educational and/or music-related file content<br><br>
-- Create an application designed for musicians and music teachers to interact with one another through likes, comments, and follow; where they can share ideas and gain new students via their presence on the site<br /><br /><hr />
+
+- Build a Back-End for a Full-Stack web application that allows users to store and manipulate data records about a particular domain
+
+- Design a database structure to handle the requirement of the front-end
+
+- Records in the API must have full CRUD functionality
+
+- Users need to have relevant access permissions and not have access to restricted data
+
+- Be a reusable API for 3rd parties
+<br /><br /><hr /><br>
+
+
+## Project Development Milestones
+The [Milestones](https://github.com/NickWaldock/the-woodshed-api/milestones) for the back-end development were managed seperately but were similar in scope to the front-end.
+- <strong>Authentication & Profiles</strong>
+- <strong>CRUD Functionality</strong>
+- <strong>User Interactivity</strong>
+- <strong>Forms</strong>
+- <strong>Deployment</strong>
+- <strong>Bugs</strong>
+- <strong>Documentation</strong>
+<br><br><hr>
+
+
+## User Stories
+
+
 
 ## Database
-[Django REST Framework](https://www.django-rest-framework.org/) was utilised for building a custom API in a seperate repository which can be viewed here: <br> --> <strong><ins>[The Woodshed API](https://github.com/NickWaldock/the-woodshed-api)</strong>
-
-[ElephantSQL](https://www.elephantsql.com/) was used to host and manage the PostgreSQL database. The database works in tandem with the REACT front-end application to manage and store data delivered via the custom API. 
+[Django REST Framework](https://www.django-rest-framework.org/) was utilised for building this custom API
+<br>
+[ElephantSQL](https://www.elephantsql.com/) was used to host and manage the PostgreSQL database. The database works in tandem with a [REACT front-end application](https://github.com/NickWaldock/the-woodshed) to manage and store data delivered via the API
 <br/><br>
 
-### Database Schema
-The following database design was decided upon during development to facilitate reaching the project's purpose and [aims](#aims)<br>
-<image src="readme-files/backend/database.png" width=70%><br>
+## Database Schema
+The following database design was decided upon during development to facilitate reaching the project's purpose and [aims](#aims)
+
+<br>
+<image src="readme-files/database.png" width=70%><br>
+
 <em>*Database schema created using [LucidChart](https://www.lucidchart.come)</em><br><br>
 
-### Models
+## CRUD Functionality
+
+This project incorporates CRUD (Create, Read, Update, Delete) functionality as a key feature. Users will need to be able to create, edit and update existing elements, and finally delete any created content. All content stored in the back-end is to be kept updated in the front-end rendering so changes remain apparent to the user.
+
+<br/><hr>
+
+
+## Technologies
+
+Built using: [React](https://react.dev/), [Django Rest Framework](https://www.django-rest-framework.org/), [React Bootstrap](https://react-bootstrap.netlify.app/), [CSS](https://www.w3.org/Style/CSS/Overview.en.html#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is,CSS%20and%20on%20available%20software.), and [HTML(JSX)](https://www.w3schools.com/react/react_jsx.asp), as well as [Cloudinary](https://cloudinary.com/) for image and file storage, [ElephantSQL](https://www.elephantsql.com/) for database management, and [Heroku](https://www.heroku.com/) for deployment hosting.
+<br><br><hr>
+
+## [Django Rest Framework](https://www.django-rest-framework.org/)
+The custom API was constructed using DRF, a [Django](https://www.djangoproject.com/) framework built using the [Python](https://www.python.org/) programming language. DRF is a popular framework for developing web application APIs and includes features such as [serialization](https://www.django-rest-framework.org/api-guide/serializers/) which <em>"allow complex data such as querysets and model instances to be converted to native Python datatypes that can then be easily rendered into JSON, XML or other content types. Serializers also provide deserialization, allowing parsed data to be converted back into complex types after first validating the incoming data."</em>
+
+### [Django Rest Auth](https://django-rest-auth.readthedocs.io/en/latest/)
+Creates DRF API endpoints for handling user registration, essentially givig a user site credentials to that can be validated by Django Allauth (below)
+
+### [Django All Auth](https://django-rest-auth.readthedocs.io/en/latest/index.html)
+A [DRF](https://www.django-rest-framework.org/) library that handles user registration and authentication tasks and additional user management requirements
+
+### [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) 
+A [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication plugin for [DRF](https://www.django-rest-framework.org/). It provides user authentication communication between the client in the front-end and server in the back-end so the user can be validated to access the features of the application
+
+## Cloudinary
+[Cloudinary](https://cloudinary.com/) is a cloud-based image and file hosting site. In this project all profile images and PDF files are stored on this platform. URLs for files are saved to the relevant database instances 
+
+For steps on using Cloudinary for your version of this project click [here](#deployment)
+<br><br>
+
+## Models
 In order to fulfil the requirements of the project, database [models](https://docs.djangoproject.com/en/4.2/topics/db/models/) would be required to store data. The following are the models created and used by the API to allow the users to interact with and manipulate data on the site.<br><br>
 
-#### <ins>***User Model***
+### <ins>***User Model***
 [Django Auth](https://docs.djangoproject.com/en/4.2/topics/auth/) is a built in Django library that automatically manages all user creation, authorisation and authentication. This was utilised to handle the heavy lifting of user management. Features include password checking, permissions, and user management through the admin panel.<br><br>
 
 
-#### <ins>***Profile Model***
-<image src="readme-files/backend/models/profile-model.png" width=70%><br>
+### <ins>***Profile Model***
+<image src="readme-files/models/profile-model.png" width=70%><br>
 
 - The Profile model relates to the <a href="#user">User</a> django auth package via the <strong><em>`owner`</em></strong> model attribute in a one-to-one relationship. Meaning a user can only have a single profile linked to its instance within the application<br><br>
 - <strong><em>'created_at'</em></strong>
@@ -92,9 +184,8 @@ In order to fulfil the requirements of the project, database [models](https://do
 ([Image Field](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#imagefield)) This allows the user to upload a profile image which becomes the user's '[Avatar](#)' in the front-end. Images are stored on the cloud file storage service [Cloudinary](https://cloudinary.com). When a user first creates an account they are designated a temporary profile image until they upload their own. Django's image form field uses [Pillow](https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html), a [file extension validator](https://docs.djangoproject.com/en/4.2/ref/validators/#django.core.validators.FileExtensionValidator) to determine valid image files
 <br><br>
 
-
-#### <ins>***Post Model***
-<image src="readme-files/backend/models/post-model.png" width=70%><br>
+### <ins>***Post Model***
+<image src="readme-files/models/post-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong>
 ([Foreign Key](https://docs.djangoproject.com/en/4.2/ref/models/fields/#foreignkey)) is a Many to One relationship with the `User` model. A single use can own and have multiple post instances related to it. Also links to the `owner` attribute in the [profile model](#profile-model). The `on_delete=models.CASCADE` setting means all posts related to this profile will be deleted if the user is deleted. <em>*Note: If the `profile` instance is seperate from the user model, if the profile instance is deleted and not the <em>user</em> instance then the post data will continue to exist</em><br>
@@ -133,8 +224,8 @@ class Meta:
 ```
 <br>
 
-#### <ins>***Comment Model***
-<image src="readme-files/backend/models/comment-model.png" width=70%><br>
+### <ins>***Comment Model***
+<image src="readme-files/models/comment-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong> 
 ([Foreign Key](https://docs.djangoproject.com/en/4.2/ref/models/fields/#foreignkey)) links a single comment to a single `User` via a `Foreign Key`. A user can own multiple comments on any post instance. `User, on_delete=CASCADE` means if a `User` instance is deleted, all comments owned by that user will also be deleted<br>
@@ -158,8 +249,8 @@ class Meta:
 ```
 <br><br>
 
-#### <ins>***Like Model***
-<image src="readme-files/backend/models/like-model.png" width=70%><br>
+### <ins>***Like Model***
+<image src="readme-files/models/like-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong> 
 ([Foreign Key](https://docs.djangoproject.com/en/4.2/ref/models/fields/#foreignkey)) links a like instance to a single `User` via a `Foreign Key`. A user can 'like' multiple `Post` instances. `User, on_delete=CASCADE` means if a `User` instance is deleted, all 'likes' owned by that user on any post in the database will also be deleted. With this, it can be possible to view all posts that a user has 'liked'.<br>
@@ -170,9 +261,8 @@ class Meta:
 - <strong><em>'created_at'</em></strong> 
 ([Date Time Field](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#datetimefield)) creates a current time stamp for when a `User` has 'liked' a post. <em>*Note: This field does not require an `updated_at` model attribute. This is because a 'like' instance will either exist or not. If a user is to 'unlike' a post, the 'like' instance is removed completely and not updated. A repeated 'like' action will create a new 'like' instance</em><br><br>
 
-
-#### <ins>***Follower Model***
-<image src="readme-files/backend/models/follower-model.png" width=70%><br>
+### <ins>***Follower Model***
+<image src="readme-files/models/follower-model.png" width=70%><br>
 
 - <strong><em>'owner'</em></strong> 
 ([Foreign Key](https://docs.djangoproject.com/en/4.2/ref/models/fields/#foreignkey)) links a follower instance to a single `User` via a `Foreign Key`. A `related_name='following` means that this relationship can be accessed in the front-end for data display to show which profiles this singular profile has chosen to link to or 'follow'. A user can 'follow' multiple profiles (or `owners`). `User, on_delete=CASCADE` means if a `User` instance is deleted, all 'follow' relationships creted by that user will also be deleted. This function allows us to filter posts from only profiles the current user is 'following'<br>
@@ -184,53 +274,16 @@ class Meta:
 ([Date Time Field](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#datetimefield)) provides a current time stamp when the relationship was established. <br><em>*Note: This field does not require an `updated_at` model attribute. This is because a 'like' instance will either exist or not. If a user is to 'unlike' a post, the 'like' instance is removed completely and not updated. A repeated 'like' action will create a new 'like' instance</em>
 <br><br><hr>
 
-## CRUD Functionality
-
-This project incorporates CRUD (Create, Read, Update, Delete) functionality as a key feature. Users will need to be able to create, edit and update existing elements, and finally delete any created content. All content stored in the back-end is to be kept updated in the front-end rendering so changes remain apparent to the user.
-
-<br/><hr>
 
 
-#### Back-End Project Development Milestones
-The [milestones](https://github.com/NickWaldock/the-woodshed-api/milestones) for the back-end development were managed seperately but were similar in scope to the front-end.
-- <strong>Authentication & Profiles</strong>
-- <strong>CRUD Functionality</strong>
-- <strong>User Interactivity</strong>
-- <strong>Forms</strong>
-- <strong>Deployment</strong>
-- <strong>Bugs</strong>
-- <strong>Documentation</strong>
+
+
+# Testing
+
+## PEP8 Validation
+## Manual Testing
+
 <br><br><hr>
-
-
-
-
-
-
-
-### [Django Rest Framework](https://www.django-rest-framework.org/)
-The custom API was constructed using DRF, a [Django](https://www.djangoproject.com/) framework built using the [Python](https://www.python.org/) programming language. DRF is a popular framework for developing web application APIs and includes features such as [serialization](https://www.django-rest-framework.org/api-guide/serializers/) which <em>"allow complex data such as querysets and model instances to be converted to native Python datatypes that can then be easily rendered into JSON, XML or other content types. Serializers also provide deserialization, allowing parsed data to be converted back into complex types after first validating the incoming data."</em>
-
-### [Django Rest Auth](https://django-rest-auth.readthedocs.io/en/latest/)
-Creates DRF API endpoints for handling user registration, essentially givig a user site credentials to that can be validated by Django Allauth (below)
-
-### [Django All Auth](https://django-rest-auth.readthedocs.io/en/latest/index.html)
-A [DRF](https://www.django-rest-framework.org/) library that handles user registration and authentication tasks and additional user management requirements
-
-### [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) 
-A [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication plugin for [DRF](https://www.django-rest-framework.org/). It provides user authentication communication between the client in the front-end and server in the back-end so the user can be validated to access the features of the application
-
-## Cloudinary
-[Cloudinary](https://cloudinary.com/) is a cloud-based image and file hosting site. In this project all profile images and PDF files are stored on this platform. URLs for files are saved to the relevant database instances 
-
-For steps on using Cloudinary for your version of this project click [here](#deployment)
-<br><br>
-
-
-
-
-
-
 
 # Deployment
 
@@ -259,23 +312,22 @@ To create and deploy your own version of this application please follow the step
 
 
 ## <ins>Heroku
-### <em>Back-End</em>
-To deploy the back-end to Heroku:
+To deploy the API to Heroku:
 1. Log in to [Heroku](https://www.heroku.com/) (create an account if necessary)
 2. From the dashboard, click on the "New" button and select "Create new app"
 3. Choose an appropriate name for your app and select the region closest to your location
 4. Access the "Settings" tab
 5. Click on "Reveal Config Vars"
-6. Add all necessary key-value pairs:
-<image src="readme-files/backend/heroku-vars-backend.png">
+6. Add all necessary key-value pairs:<br>
+<image src="readme-files/heroku-vars-backend.png">
 <br/>
 Required config vars:
-- ALLOWED_HOST --> The URL of the back-end application
-- CLIENT_ORIGIN --> The URL of the front-end application
-- CLOUNDINARY_URL --> Available from Cloudinary (for image, file storage)
-- DATASABE_URL --> Available from your SQL provider
-- DISABLE_COLLECTSTATIC - "1"
-- SECRET_KEY --> Django secret key, found in env.py file. Should be unique!
+- <strong>ALLOWED_HOST</strong> --> The URL of the back-end application
+- <strong>CLIENT_ORIGIN</strong> --> The URL of the front-end application
+- <strong>CLOUNDINARY_URL</strong> --> Available from Cloudinary (for image, file storage)
+- <strong>DATASABE_URL</strong> --> Available from your SQL provider
+- <strong>DISABLE_COLLECTSTATIC</strong> - "1"
+- <strong>SECRET_KEY</strong> --> Django secret key, found in env.py file. Should be unique!
 
 7. Access the "Deploy" tab
 8. Select "GitHub - Connect to GitHub" from the deployment methods and click on "Connect to GitHub"
@@ -284,35 +336,24 @@ Required config vars:
 12. Click "View" to view the deployed site. The back-end is now deployed!
 <br><br>
 
-### <em>Front-end</em>
-1. Log in to [Heroku](https://www.heroku.com/) (create an account if necessary)
-2. From the dashboard, click on the "New" button and select "Create new app"
-3. Choose an appropriate name for your app and select the region closest to your location
-4. Navigate to "Settings"
-9. Select "GitHub - Connect to GitHub" from the deployment methods and click on "Connect to GitHub"
-10. Search for the relevant GitHub repository and click it
-11. Choose automatic deploys to allow the deployed site to be updated each time code is pushed to GiHub
-12. Click "View" to view the deployed site. The site is now deployed!
-<br><br>
-
 ## <ins>Forking
-To fork this repository on [Github](https://github.com/NickWaldock/the-woodshed) proceed with the following steps:
+To fork this repository on [Github](https://github.com/NickWaldock/the-woodshed-api) proceed with the following steps:
 1. Log it to GitHub (create an account if necessary)
-2. Locate the [GitHub Respository](https://github.com/NickWaldock/the-woodshed)
+2. Locate the [GitHub Respository](https://github.com/NickWaldock/the-woodshed-api)
 3. On the repository page, find the 'Fork' menu in the top right, click on the small down arrow
 4. Select '+ Create a new fork'
 5. Remane repository as required
 6. Click 'Create Fork'
 7. You now have your forked version of this repository
 
-<em>* Note * You can find the back-end repo for this project [here](https://github.com/NickWaldock/the-woodshed-api)</em>
+<em>* Note * You can find the front-end repo for this project [here](https://github.com/NickWaldock/the-woodshed)</em>
 <br />
 <br />
 
 ## <ins>Cloning
 To clone the repository procees with the following steps:
 1. Log in to GitHub (create an account if necessary)
-2. Locate the [GitHub Respository](https://github.com/NickWaldock/the-woodshed)
+2. Locate the [GitHub Respository](https://github.com/NickWaldock/the-woodshed-api)
 3. On the repository page, find and click on the 'Code' menu in the mid-top right of the page
 4. Choose to either download or open in GitHub Desktop,
   - or;
@@ -323,31 +364,16 @@ To clone the repository procees with the following steps:
     7. Open Terminal and change the current directory to where you want the cloned directory
     8. Type git clone, and paste the url, press Enter to create your local clone
 <br/><br/>
-<em>* NOTE * You can find the back-end repo for this project [here](https://github.com/NickWaldock/the-woodshed-api)</em>
 
+<em>* NOTE * You can find the front-end repo for this project [here](https://github.com/NickWaldock/the-woodshed)</em>
 <hr><br /><br />
 
 # References & Acknowledgements
-## General Reference
-### Troubleshooting
-- [StackOverflow](https://stackoverflow.com/)
-- [W3 Schools](https://www.w3schools.com/react/default.asp)
-- [Developer Way](https://www.developerway.com/)
-- [CodePen](https://codepen.io/)
-
-
-
-
-
-## Code Reference
+## References
 
 - [Moments (Code Institute Project)](https://codeinstitute.net/): this demo project was heavily consulted in the creation of this project and expanded upon in various aspects such as the back-end models, front-end components, and styling.
 
 - [Using validators for file type (PDF)](https://stackoverflow.com/questions/69054680/safe-way-to-validate-file-extension-in-serializer-django): this page was consulted to help create the file validation in the Django back-end
-
-
-
-
 
 
 ## Acknowledgements
