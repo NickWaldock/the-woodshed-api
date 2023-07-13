@@ -15,19 +15,23 @@ The documentation for the REACT front-end side of this project can be found here
 # Table of Contents
 
 1. [Introduction](#introduction)
+
+<br>
+
 2. [Project Development](#project-development)
     - 2.1 [Repositories & Project Boards](#repos--project-links)
     - 2.2 [Aims](#aims)
     - 2.3 [Milestones](#milestones)
     - 2.4 [User Stories](#user-stories)
     
-<br><br>
+<br>
 
 3. [Database](#database)
     - 3.1 [Database Schema](#database-schema)
     - 3.2 [CRUD Functionality](#crud-functionality)
     - 3.3 [Technologies](#technologies)
-<br><br>
+
+<br>
 
 4. [Models](#models)
     - 4.1 [User Model](#user-model)
@@ -36,12 +40,14 @@ The documentation for the REACT front-end side of this project can be found here
     - 4.4 [Comment Model](#comment-model)
     - 4.5 [Like Model](#like-model)
     - 4.6 [Follower Model](#follower-model)
-<br><br>
+
+<br>
 
 5. [Testing](#testing)
     - 5.1 [Pep8 Validation](#pep8-validation)
     - 5.2 [Manual Testing](#manual-testing)
-<br><br>
+
+<br>
 
 6. [Deployment](#deployment)
     - 6.1 [Cloudinary](#cloudinary-1)
@@ -49,7 +55,8 @@ The documentation for the REACT front-end side of this project can be found here
     - 6.3 [Heroku](#heroku)
     - 6.4 [Forking](#forking)
     - 6.5 [Cloning](#cloning)
-<br><br>
+
+<br>
 
 7. [References & Acknowledgements](#references--acknowledgements)
     - 7.1 [References](#references)
@@ -59,23 +66,27 @@ The documentation for the REACT front-end side of this project can be found here
 
 # Introduction
 
-[**The Woodshed**](https://thewoodshed.herokuapp.com/)
-is a React front-end multi-user file sharing application designed to allow musicians to share, like, and comment on PDF files relating to musical practice. The name of the site refers to the colloquial term _'woodshedding'_ which is often used by musicians to mean spending time in the practice room. This originates in old jazz vernacular meaning the musician should go to the woodshed, a solitary place where no-one can hear you continually get it wrong for your sake and theirs(!), until they can play the passage correctly and are ready to return. In modern times the term is now used commonly to deonte spending time practicing.
+The Woodshed API is a custom Application Programming Interface that facilitates a multi-user file sharing  platform designed to allow musicians to share, like, and comment on PDF files relating to musical practice. 
+
+This project supports a React front-end application called [The Woodshed](https://the-woodshed.herokuapp.com/) but is also available as a custom API for related projects by 3rd parties.
+
+The name of the site refers to the colloquial term _'woodshedding'_ which is often used by musicians to mean spending time in the practice room. This originates in old jazz vernacular meaning the musician should go to the woodshed, a solitary place where no-one can hear you continually get it wrong for your sake and theirs(!), until they can play the passage correctly and are ready to return. In modern times the term is now used commonly to deonte spending time practicing.
 
 In the digital age PDFs are common as resources amongst musicians and music teachers alike. And with the large demand for online music lessons increasing during the 2020 pandemic the demand to share resources online increase.
 
-The Woodshed attempts to demonstrate a social-media-esq application for musicians and teachers to share musical and educational resources and grow a following of students and other musicians and potentially recruit new students through the contact information. The content shared could include anything from simple exercises, to whole pieces and scores.
+The Woodshed API attempts to act as a starting point for anyone attempting to create their own music-based file sharing platform and is able to be easily built upon for scaling and further development purposes.
 
-This site allows users to create an account, profile, and share PDF files as well as interact in the environment through likes, comments, and following users.
+This API allows users to create an account, profile, and share PDF files as well as interact in the environment through likes, comments, and following users.
 
-The Woodshed has been created as the 5th portfolio project for the [Code Institue](https://codeinstitute.net) Full Stack Software Development Diploma and has no intended commerical purpose.
+The Woodshed API has been created as part of the 5th portfolio project for the [Code Institue](https://codeinstitute.net) Full Stack Software Development Diploma and has no intended commerical purpose.
+<br><hr>
 
 # Project Development
 
 ## Repos & Project Links
-- [Front-end Repository](https://github.com/NickWaldock/the-woodshed)
+- [The Woodshed REACT Front-end Repository](https://github.com/NickWaldock/the-woodshed)
+- [The Woodshed LIVE Site](https://the-woodshed.herokuapp.com/)
 - [Front-end Project Board](https://github.com/users/NickWaldock/projects/7)<br><br>
-- [Back-end Repository](https://github.com/NickWaldock/the-woodshed-api)
 - [Back-end Project Board](https://github.com/users/NickWaldock/projects/6)<br><br>
 - [Github Profile](https://github.com/NickWaldock)
 <br><br><hr>
@@ -90,25 +101,67 @@ The Woodshed has been created as the 5th portfolio project for the [Code Institu
 
 - Users need to have relevant access permissions and not have access to restricted data
 
-- Be a reusable API for 3rd parties
+- Be a reusable, scalable, and customisable API
 <br /><br /><hr /><br>
 
 
 ## Milestones
 The [Milestones](https://github.com/NickWaldock/the-woodshed-api/milestones) for the back-end development were managed seperately but were similar in scope to the front-end.
 - <strong>Authentication & Profiles</strong>
+	- Relating to creation of user accounts and profile and thier authentication<br><br>
+
 - <strong>CRUD Functionality</strong>
+	- Relating to the ability to Create, Read, Update, or Delete database instances<br><br>
+
 - <strong>User Interactivity</strong>
+	- Relating to a single user instance interacting with the property of a different user instance<br><br>
+
 - <strong>Forms</strong>
+	- Relating to front-end submittable forms that parse data to the API<br><br>
+
 - <strong>Deployment</strong>
+	- Relating to deploying the API after development<br><br>
+
 - <strong>Bugs</strong>
+	- Documentation of Bugs and Issues<br><br>
+
 - <strong>Documentation</strong>
+	- Documentation tasks
 <br><br><hr>
 
 
 ## User Stories
+User stories were mapped to [milestones](#milestones) in the [project Kanban Board](https://github.com/users/NickWaldock/projects/6/views/2)
+
+<strong>Authenticatin & Profiles</strong>
+
+- As a user, I should only be able to edit or delete my own posts, comments, and profile
+- As a user, I want to be able to create a profile
+- As a user, I want to be able to edit my profile
+- As a user, I want to be able to see the details and data of individual profiles
+- As a user, I want to be able to log in and out
+- As a user, I want to be able to view user profiles
+- As a user, I want to be able to add picture to my profile
+- As a site owner, I want the API to be configured to allow a user to stay logged in
 
 
+<strong>CRUD Functionality</strong>
+- As a user, I want to be able to view posts
+- As a user, I want to be able to edit or delete my posts
+- As a user, I want to be able to search posts using a search bar
+
+
+<strong>User Interactivity</strong>
+- As a user, I want to be able to add comments to a post
+- As a user, I want to be able to read comments on a post
+As a user, I want to be able to follow and unfollow other users
+- As a user, I want to be able to like and unlike posts
+- As a user, I want to be able to see how many likes and comments a post has
+- As a user, I want to be able to see how many followers a profile has, how many posts, and how many users that profile is following
+
+<strong>Deployment</strong>
+- As a site owner, I need the API to be deployed to an external server
+<br><hr>
 
 # Database
 [Django REST Framework](https://www.django-rest-framework.org/) was utilised for building this custom API
@@ -127,9 +180,7 @@ The following database design was decided upon during development to facilitate 
 ## CRUD Functionality
 
 This project incorporates CRUD (Create, Read, Update, Delete) functionality as a key feature. Users will need to be able to create, edit and update existing elements, and finally delete any created content. All content stored in the back-end is to be kept updated in the front-end rendering so changes remain apparent to the user.
-
 <br/><hr>
-
 
 ## Technologies
 
@@ -147,12 +198,13 @@ A [DRF](https://www.django-rest-framework.org/) library that handles user regist
 
 ### [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) 
 A [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication plugin for [DRF](https://www.django-rest-framework.org/). It provides user authentication communication between the client in the front-end and server in the back-end so the user can be validated to access the features of the application
+<br><br>
 
 ## Cloudinary
 [Cloudinary](https://cloudinary.com/) is a cloud-based image and file hosting site. In this project all profile images and PDF files are stored on this platform. URLs for files are saved to the relevant database instances 
 
 For steps on using Cloudinary for your version of this project click [here](#deployment)
-<br><br>
+<br><br><hr>
 
 # Models
 In order to fulfil the requirements of the project, database [models](https://docs.djangoproject.com/en/4.2/topics/db/models/) would be required to store data. The following are the models created and used by the API to allow the users to interact with and manipulate data on the site.<br><br>
@@ -248,7 +300,7 @@ class Meta:
 class Meta:
    ordering = ['-created_at']
 ```
-<br><br>
+<br>
 
 ## <ins>***Like Model***
 <image src="readme-files/models/like-model.png" width=70%><br>
@@ -287,7 +339,7 @@ All custom Python passes validation.
 
 Documented below are all the manual tests for the API endpoint that were undertaken and their results
 
-<!-- <details> -->
+<details>
 <summary>Testing Endpoints</summary>
 <br>
 
@@ -314,31 +366,30 @@ Documented below are all the manual tests for the API endpoint that were underta
 		<td>PASS</td>
         <td><image src="readme-files/testing/update-user.png"></image></td>
 	</tr>
-	liking a post as a user - like id
 </table>
 
 ### Posts
 <table>
 	<tr>
 		<td>Creating a New Post Instance</td>
-		<td>/posts/</td>
+		<td>/posts/create</td>
 		<td>When authenticated, making a POST request to this endpoint will result in a new post instance being created with the inputted form data, the file is saved to the hosting platform</td>
 		<td>PASS</td>
 		<td><image src="readme-files/testing/new-post.png"></image></td>
 	</tr>
 	<tr>
 		<td>Updating a Post Instance</td>
-		<td>/posts/72</td>
+		<td>/posts/72/edit</td>
 		<td>When authenticated, making a POST request to this endpoint with the post id will update the post instance with the inputted form data</td>
 		<td>PASS</td>
 		<td><image src="readme-files/testing/update-post.png"></image></td>
 	</tr>
 	<tr>
 		<td>Deleting a Post Instance</td>
-		<td></td>
-		<td></td>
+		<td>/posts/72</td>
+		<td>When authenticated, making a DELETE request to this endpoint will remove the post instance form the database</td>
 		<td>PASS</td>
-		<td><image src="readme-files/testing/"></image></td>
+		<td><image src="readme-files/testing/delete-post.png"></image></td>
 	</tr>
 	<tr>
 		<td>Listing Post Instances</td>
@@ -430,9 +481,9 @@ Documented below are all the manual tests for the API endpoint that were underta
 		<td><image src="readme-files/testing/unfollow.png"></image></td>
 	</tr>
 <tr>
-		<td>Being Followed by a profile relationship</td>
-		<td></td>
-		<td></td>
+		<td>Being Followed by a Profile Relationship</td>
+		<td>/profiles/23</td>
+		<td>When authenticated, if another user has 'followed' the authenticated user's profile, the relationship is reflected in that profile's instance "followers_count" </td>
 		<td>PASS</td>
 		<td><image src="readme-files/testing/being-followed.png"></image></td>
 	</tr>
@@ -529,7 +580,7 @@ To clone the repository procees with the following steps:
 
 - [Moments (Code Institute Project)](https://codeinstitute.net/): this demo project was heavily consulted in the creation of this project and expanded upon in various aspects such as the back-end models, front-end components, and styling.
 
-- [Using validators for file type (PDF)](https://stackoverflow.com/questions/69054680/safe-way-to-validate-file-extension-in-serializer-django): this page was consulted to help create the file validation in the Django back-end
+- [Using validators for file type (PDF)](https://stackoverflow.com/questions/69054680/safe-way-to-validate-file-extension-in-serializer-django): this page was consulted to help create the file validation
 
 
 ## Acknowledgements
