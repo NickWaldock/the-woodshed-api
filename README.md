@@ -281,8 +281,163 @@ class Meta:
 ## PEP8 Validation
 [PyCodeStyle](https://pycodestyle.pycqa.org/en/latest/intro.html) was used for python code validation, previously PEP8.
 
+All custom Python passes validation.
 
 ## Manual Testing
+
+Documented below are all the manual tests for the API endpoint that were undertaken and their results
+
+<!-- <details> -->
+<summary>Testing Endpoints</summary>
+<br>
+
+### Profiles
+<table>
+	<tr>
+		<th>Test</th>
+		<th>URL</th>
+		<th>Procedure</th>
+		<th>Result</th>
+		<th>Data</th>
+	</tr>
+	<tr>
+		<td>Create a new Profile/User</td>
+		<td>/profiles/</td>
+		<td>A POST request to this endpoint with the username data 'test123' should result in creation of new user of the same name. A new profile linked to the user is created and available for view. The image field contains the default image, the date of creation is stated, and all other fields are empty</td>
+		<td>PASS</td>
+        <td><image src="readme-files/testing/new-user.png"></image></td>
+	</tr>
+<tr>
+		<td>Update a new Profile/User Instance</td>
+		<td>/profiles/23</td>
+		<td>When authenticatd, A POST request to this endpoint with additional profile data should update the profile instance</td>
+		<td>PASS</td>
+        <td><image src="readme-files/testing/update-user.png"></image></td>
+	</tr>
+	liking a post as a user - like id
+</table>
+
+### Posts
+<table>
+	<tr>
+		<td>Creating a New Post Instance</td>
+		<td>/posts/</td>
+		<td>When authenticated, making a POST request to this endpoint will result in a new post instance being created with the inputted form data, the file is saved to the hosting platform</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/new-post.png"></image></td>
+	</tr>
+	<tr>
+		<td>Updating a Post Instance</td>
+		<td>/posts/72</td>
+		<td>When authenticated, making a POST request to this endpoint with the post id will update the post instance with the inputted form data</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/update-post.png"></image></td>
+	</tr>
+	<tr>
+		<td>Deleting a Post Instance</td>
+		<td></td>
+		<td></td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/"></image></td>
+	</tr>
+	<tr>
+		<td>Listing Post Instances</td>
+		<td>/posts/</td>
+		<td>When authenticated, sending a GET request to this endpoint will retireve all existing post instances</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/posts-list.png"></image></td>
+	</tr>	
+	<tr>
+		<td>Post Like Relationship</td>
+		<td>/posts/72</td>
+		<td>When authenticated, 'liking' a post sends a PUT request to that post's instance, incrementing the "like_count" field by 1</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/post-relationship.png"></image></td>
+	</tr>	
+	<tr>
+		<td>Post Comment Relationship</td>
+		<td>/posts/72</td>
+		<td>When authenticated, commenting on a post sends a PUT request to that post's instance, incrementing the "comments_count" by 1</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/post-relationship.png"></image></td>
+	</tr>	
+</table>
+
+### Likes
+<table>
+<tr>
+		<td>Liking a Post Instance</td>
+		<td>/likes/61</td>
+		<td>When authenticated, 'liking' a post sends a POST request to this endpoint adding the relationship between the authenticated user's 'owner' field and the post id with the likes own unique id. An authenticated owner id that is the same as the post owner id cannot make this action (a user can't like their own post)</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/like.png"></image></td>
+	</tr>
+<tr>
+		<td>Unliking a Post Instance</td>
+		<td>/likes/61</td>
+		<td>When authenticated, 'liking' a post that already contains a like instance relationship sends a DELETE request to this endpoint, removing the relationship between the authenticated user id and the post id</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/unlike.png"></image></td>
+	</tr>
+	<tr>
+		<td>Like Relationships</td>
+		<td>/likes/</td>
+		<td>When authenticated, making a GET request to this endpoint will retrieve a list of all like relationships instnces</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/likes.png"></image></td>
+	</tr>
+</table>
+
+### Commenting
+<table>
+<tr>
+		<td>Creating a Comment Instance</td>
+		<td>/comments/27</td>
+		<td>When authenticated, sending a POST request to this endpoint will result in a comment instance being created with its own unique id</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/comment.png"></image></td>
+	</tr>
+	<tr>
+		<td>Updating a Comment Instance</td>
+		<td>/comments/72</td>
+		<td>When authenticated, sending a POST request to this endpoint will result in a comment instance with the same id being updated</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/comment-update.png"></image></td>
+	</tr>
+<tr>
+		<td>Deleting a Comment Instance</td>
+		<td>/comments/72</td>
+		<td>When authticated, sending a DELETE request to this endpoint will result in a comment with the related id being deleted</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/delete-comment.png"></image></td>
+	</tr>
+</table>
+
+### Following 
+<table>
+	<tr>
+		<td>Following a Profile Relationship</td>
+		<td>/followers/74</td>
+		<td>When authenticated, following another profile will send a POST request to this endpoint creating a follower instance id</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/follow-user.png"></image></td>
+	</tr>
+	<tr>
+		<td>Reverting a Profile Follow Relationship</td>
+		<td>/followers/74</td>
+		<td>When authenticated, unfollowing another profile will send a DELETE request to this endpoint, removing the follower instance by id</td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/unfollow.png"></image></td>
+	</tr>
+<tr>
+		<td>Being Followed by a profile relationship</td>
+		<td></td>
+		<td></td>
+		<td>PASS</td>
+		<td><image src="readme-files/testing/being-followed.png"></image></td>
+	</tr>
+</table>
+</details>
 
 <br><br><hr>
 
