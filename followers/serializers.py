@@ -15,7 +15,7 @@ class FollowerSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        try: 
+        try:
             return super().create(validated_data)
         except IntegrityError:
             raise serializers.ValidationError({

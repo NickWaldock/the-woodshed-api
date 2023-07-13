@@ -279,6 +279,9 @@ class Meta:
 # Testing
 
 ## PEP8 Validation
+[PyCodeStyle](https://pycodestyle.pycqa.org/en/latest/intro.html) was used for python code validation, previously PEP8.
+
+
 ## Manual Testing
 
 <br><br><hr>

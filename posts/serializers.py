@@ -31,7 +31,7 @@ class PostSerializer(serializers.ModelSerializer):
             ).first()
             return like.id if like else None
         return None
-    
+
     class Meta:
         model = Post
         fields = '__all__'

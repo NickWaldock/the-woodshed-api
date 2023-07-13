@@ -22,7 +22,7 @@ class ProfileList(generics.ListAPIView):
         DjangoFilterBackend,
     ]
     ordering_fields = [
-        'posts_count', 
+        'posts_count',
         'followers_count',
         'following_count',
         'owner__following__created_at',
