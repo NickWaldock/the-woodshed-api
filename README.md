@@ -362,7 +362,7 @@ Documented below are all the manual tests for the API endpoint that were underta
 <tr>
 		<td>Update a new Profile/User Instance</td>
 		<td>/profiles/23</td>
-		<td>When authenticatd, A POST request to this endpoint with additional profile data should update the profile instance</td>
+		<td>When authenticatd, A PUT request to this endpoint with additional profile data should update the profile instance</td>
 		<td>PASS</td>
         <td><image src="readme-files/testing/update-user.png"></image></td>
 	</tr>
@@ -380,7 +380,7 @@ Documented below are all the manual tests for the API endpoint that were underta
 	<tr>
 		<td>Updating a Post Instance</td>
 		<td>/posts/72/edit</td>
-		<td>When authenticated, making a POST request to this endpoint with the post id will update the post instance with the inputted form data</td>
+		<td>When authenticated, making a PUT request to this endpoint with the post id will update the post instance with the inputted form data</td>
 		<td>PASS</td>
 		<td><image src="readme-files/testing/update-post.png"></image></td>
 	</tr>
@@ -451,7 +451,7 @@ Documented below are all the manual tests for the API endpoint that were underta
 	<tr>
 		<td>Updating a Comment Instance</td>
 		<td>/comments/72</td>
-		<td>When authenticated, sending a POST request to this endpoint will result in a comment instance with the same id being updated</td>
+		<td>When authenticated, sending a PUT request to this endpoint will result in a comment instance with the same id being updated</td>
 		<td>PASS</td>
 		<td><image src="readme-files/testing/comment-update.png"></image></td>
 	</tr>
@@ -578,7 +578,7 @@ To clone the repository procees with the following steps:
 # References & Acknowledgements
 ## References
 
-- [Moments (Code Institute Project)](https://codeinstitute.net/): this demo project was heavily consulted in the creation of this project and expanded upon in various aspects such as the back-end models, front-end components, and styling.
+- [Moments (Code Institute Project)](https://codeinstitute.net/): this demo project was consulted in the creation of this project and expanded upon in the models
 
 - [Using validators for file type (PDF)](https://stackoverflow.com/questions/69054680/safe-way-to-validate-file-extension-in-serializer-django): this page was consulted to help create the file validation
 
